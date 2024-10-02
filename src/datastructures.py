@@ -44,8 +44,8 @@ class FamilyStructure:
 
     def delete_member(self, id):
         # fill this method and update the return
-        for i in range(len(self._members)):
-            if(id==self._members[i]['id']):
+        for (i,obj) in enumerate(self._members):
+            if(id==obj['id']):
                 self._members.pop(i)
                 return "Success"
         return "Failed"
