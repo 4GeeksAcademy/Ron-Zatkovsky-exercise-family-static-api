@@ -46,6 +46,8 @@ def insert_member():
         request_body['id']
     except:
         request_body['id']=jackson_family._generateId()
+    while(jackson_family.validate_id(request_body['id'])):
+        request_body['id']=jackson_family._generateId()
     jackson_family.add_member(request_body)
     return "Member Added",200
 

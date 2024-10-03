@@ -46,6 +46,11 @@ class FamilyStructure:
         for (i,obj) in enumerate(self._members):
             if id==obj['id']:
                 self._members[i]=body
+    def validate_id(self,id):
+        for obj in self._members:
+            if(obj['id']==id):
+                return True
+        return False
 
     def delete_member(self, id):
         # fill this method and update the return
