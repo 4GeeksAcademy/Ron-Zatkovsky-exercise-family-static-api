@@ -42,6 +42,10 @@ def retrieve_member(id):
 @app.route('/member', methods=['POST'])
 def insert_member():
     request_body=request.json
+    try:
+        request_body['id']
+    except:
+        request_body['id']=jackson_family._generateId()
     jackson_family.add_member(request_body)
     return "Member Added",200
 
