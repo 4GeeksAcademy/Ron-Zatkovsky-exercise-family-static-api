@@ -42,6 +42,11 @@ class FamilyStructure:
         # fill this method and update the return
         self._members.append(member)
 
+    def edit_member(self,id,body):
+        for (i,obj) in enumerate(self._members):
+            if id==obj['id']:
+                self._members[i]=body
+
     def delete_member(self, id):
         # fill this method and update the return
         for (i,obj) in enumerate(self._members):

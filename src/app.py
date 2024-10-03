@@ -52,6 +52,13 @@ def remove_member(member_id):
         return jsonify({'done':True}),200
     else:
         jsonify({'done':False}),404
+
+@app.route('/member/<int:member_id>',methods=['PUT'])
+def change_member(member_id):
+    request_body=request.json
+    jackson_family.edit_member(member_id,request_body)
+    return "Edited",200
+
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3000))
